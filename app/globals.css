@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-      @apply bg-light-primaryBg text-light-primaryText;
-    }
-  
-    html.dark {
-      @apply bg-dark-primaryBg text-dark-primaryText;
-    }
+  html {
+    @apply bg-light-primaryBg text-light-primaryText;
   }
+
+  html.dark {
+    @apply bg-dark-primaryBg text-dark-primaryText;
+  }
+}
