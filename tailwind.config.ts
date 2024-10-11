@@ -9,8 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        light: {
+          primaryBg: "#f8f9fa",
+          primaryText: "#212529",
+          accent: "#1e90ff",
+        },
+        dark: {
+          primaryBg: "#212529",
+          primaryText: "#f8f9fa",
+          accent: "#00bfff",
+        },
+      },
+      fontSize: {
+        sm: "0.875rem",
+        base: "1rem",
+        lg: "1.125rem",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
       },
     },
   },
