@@ -32,7 +32,7 @@ const ThemeToggle: React.FC = () => {
               className={`flex cursor-pointer items-center rounded p-3 transition-colors duration-200 ${
                 theme === "light"
                   ? "bg-light-accent text-white"
-                  : "bg-light-primaryBg text-light-primaryText hover:bg-light-accent hover:bg-opacity-20"
+                  : "bg-light-primaryBg text-light-primaryText hover:bg-opacity-70"
               }`}
               onClick={() => handleSelect("light")}
             >
@@ -43,7 +43,7 @@ const ThemeToggle: React.FC = () => {
               className={`flex cursor-pointer items-center rounded p-3 transition-colors duration-200 ${
                 theme === "dark"
                   ? "bg-dark-accent text-dark-primaryText"
-                  : "bg-dark-primaryBg text-dark-primaryText hover:bg-dark-accent hover:bg-opacity-20"
+                  : "bg-dark-primaryBg text-dark-primaryText hover:bg-opacity-70"
               }`}
               onClick={() => handleSelect("dark")}
             >
