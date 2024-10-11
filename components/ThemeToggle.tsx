@@ -18,21 +18,21 @@ const ThemeToggle: React.FC = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="cursor-pointer rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
+        className="cursor-pointer rounded bg-light-accent px-4 py-2 font-bold text-white hover:opacity-80 dark:bg-dark-accent"
       >
         Select Theme
       </button>
       {isOpen && (
-        <div className="absolute left-0 top-full mt-2 rounded-lg border-4 border-gray-600 bg-gray-800 p-6 shadow-lg">
-          <h2 className="mb-4 text-center text-xl font-bold text-white">
+        <div className="absolute left-0 top-full mt-2 rounded-lg border-4 border-light-accent bg-light-primaryBg p-6 shadow-lg dark:border-dark-accent dark:bg-dark-primaryBg">
+          <h2 className="mb-4 text-center text-xl font-bold text-light-primaryText dark:text-dark-primaryText">
             Select Theme
           </h2>
           <div className="space-y-2">
             <div
               className={`flex cursor-pointer items-center rounded p-3 transition-colors duration-200 ${
                 theme === "light"
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  ? "bg-light-accent text-white"
+                  : "bg-light-primaryBg text-light-primaryText hover:bg-light-accent hover:bg-opacity-20"
               }`}
               onClick={() => handleSelect("light")}
             >
@@ -42,8 +42,8 @@ const ThemeToggle: React.FC = () => {
             <div
               className={`flex cursor-pointer items-center rounded p-3 transition-colors duration-200 ${
                 theme === "dark"
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  ? "bg-dark-accent text-dark-primaryText"
+                  : "bg-dark-primaryBg text-dark-primaryText hover:bg-dark-accent hover:bg-opacity-20"
               }`}
               onClick={() => handleSelect("dark")}
             >
