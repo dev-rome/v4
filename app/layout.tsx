@@ -30,7 +30,9 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${roboto.variable}`}>
       <body className="antialiased">
         <ThemeProvider>
-          <ThemeToggle />
+          <div className="fixed z-50 w-full">
+            <ThemeToggle />
+          </div>
           <main>{children}</main>
         </ThemeProvider>
       </body>
