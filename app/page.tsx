@@ -10,14 +10,14 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="flex min-h-screen items-center justify-center"
+      className="min-h-screen pt-24 md:pt-72 xl:pt-32"
     >
-      <div className="mx-auto max-w-screen-lg px-4">
+      <div className="mx-auto max-w-screen-lg px-4 md:px-8">
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="font-montserrat text-3xl opacity-80"
+          className="font-montserrat text-2xl opacity-80"
         >
           Hi, my name is
         </motion.h1>
@@ -33,7 +33,7 @@ export default function Home() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="font-roboto mt-4 text-xl leading-relaxed"
+          className="font-roboto mt-8 text-xl leading-relaxed"
         >
           I&apos;m a full-stack developer with a true passion for
           coding—especially when it comes to creating beautiful frontend
@@ -59,14 +59,14 @@ export default function Home() {
         >
           <Link
             href="/choose"
-            className="mt-10 inline-block rounded-full bg-light-accent px-8 py-4 text-lg font-bold text-white shadow-lg transition duration-300 hover:opacity-90 hover:shadow-xl dark:bg-dark-accent"
+            className="mt-8 inline-block rounded-full bg-light-accent px-8 py-4 text-lg font-bold text-white shadow-lg transition duration-300 hover:opacity-90 hover:shadow-xl dark:bg-dark-accent"
           >
             Explore My World
           </Link>
         </motion.div>
 
         <motion.div
-          className="mt-12 flex items-center gap-4"
+          className="mt-8 flex items-center gap-4"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.7 }}
@@ -79,7 +79,7 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
           >
             <TbBrandGithub
-              size={32}
+              size={28}
               className="opacity-80 transition-opacity duration-300 hover:opacity-100"
             />
           </motion.a>
@@ -91,7 +91,7 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
           >
             <TbBrandLinkedin
-              size={32}
+              size={28}
               className="opacity-80 transition-opacity duration-300 hover:opacity-100"
             />
           </motion.a>
