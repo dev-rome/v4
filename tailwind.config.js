@@ -12,6 +12,10 @@ export default {
         "accent-light": "#007bff",
         "accent-dark": "#0056b3",
       },
+      fontFamily: {
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Merriweather', 'serif'],
+      },
     },
   },
   plugins: [],
