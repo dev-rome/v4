@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLinks from "./NavLinks";
 import { useTheme } from "../context/ThemeContext";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { link: "/about", text: "About" },
@@ -17,6 +18,20 @@ export default function Navigation() {
     setIsOpen(!isOpen);
   };
 
+  // Close the menu when the screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <nav
       className={`flex items-center justify-between px-8 py-4 ${
@@ -29,7 +44,7 @@ export default function Navigation() {
       >
         <p className="font-heading">DR</p>
       </Link>
-      <div className="hidden gap-4 md:flex">
+      <div className="hidden md:flex gap-4">
         <ul className="flex space-x-4">
           {links.map(({ link, text }) => (
             <li key={text}>
@@ -54,10 +69,13 @@ export default function Navigation() {
           <span className="text-xs">Dark</span>
         </div>
       </div>
-      <div className="flex items-center md:hidden">
-        <button onClick={toggleMenu} className="focus:outline-none">
+      <div className="md:hidden flex items-center">
+        <button
+          onClick={toggleMenu}
+          className="focus:outline-none"
+        >
           <svg
-            className="h-6 w-6"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -72,33 +90,40 @@ export default function Navigation() {
           </svg>
         </button>
       </div>
-      {isOpen && (
-        <div className="absolute left-0 top-16 w-full bg-gray-100 dark:bg-gray-900 md:hidden">
-          <ul className="flex flex-col items-center space-y-4 py-4">
-            {links.map(({ link, text }) => (
-              <li key={text}>
-                <NavLinks link={link} text={text} />
-              </li>
-            ))}
-            <div className="flex items-center space-x-2">
-              <span className="text-xs">Light</span>
-              <button
-                onClick={toggleTheme}
-                className={`relative inline-flex h-6 w-16 items-center rounded-full transition-colors focus:outline-none ${
-                  theme === "light" ? "bg-gray-300" : "bg-gray-600"
-                }`}
-              >
-                <span
-                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
-                    theme === "light" ? "translate-x-1" : "translate-x-9"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute left-0 top-16 w-full bg-gray-100 dark:bg-gray-900 md:hidden"
+          >
+            <ul className="flex flex-col items-center space-y-4 py-4">
+              {links.map(({ link, text }) => (
+                <li key={text}>
+                  <NavLinks link={link} text={text} />
+                </li>
+              ))}
+              <div className="flex items-center space-x-2">
+                <span className="text-xs">Light</span>
+                <button
+                  onClick={toggleTheme}
+                  className={`relative inline-flex h-6 w-16 items-center rounded-full transition-colors focus:outline-none ${
+                    theme === "light" ? "bg-gray-300" : "bg-gray-600"
                   }`}
-                />
-              </button>
-              <span className="text-xs">Dark</span>
-            </div>
-          </ul>
-        </div>
-      )}
+                >
+                  <span
+                    className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                      theme === "light" ? "translate-x-1" : "translate-x-9"
+                    }`}
+                  />
+                </button>
+                <span className="text-xs">Dark</span>
+              </div>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
