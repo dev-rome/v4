@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import NavLinks from "./NavLinks";
-import { useTheme } from "../context/ThemeContext";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
 
 const links = [
-  { link: "/about", text: "About" },
-  { link: "/work", text: "Work" },
-  { link: "/contact", text: "Contact" },
+  { link: "#about", text: "About" },
+  { link: "#work", text: "Work" },
+  { link: "#contact", text: "Contact" },
 ];
 
 export default function Navigation() {
@@ -38,17 +36,19 @@ export default function Navigation() {
         isOpen ? "bg-gray-100 dark:bg-gray-900 md:bg-transparent" : ""
       }`}
     >
-      <Link
-        to="/"
+      <a
+        href="#home"
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800"
       >
         <p className="font-heading">DR</p>
-      </Link>
+      </a>
       <div className="hidden md:flex gap-4">
         <ul className="flex space-x-4">
           {links.map(({ link, text }) => (
             <li key={text}>
-              <NavLinks link={link} text={text} />
+              <a href={link}>
+                {text}
+              </a>
             </li>
           ))}
         </ul>
@@ -101,7 +101,9 @@ export default function Navigation() {
             <ul className="flex flex-col items-center space-y-4 py-4">
               {links.map(({ link, text }) => (
                 <li key={text}>
-                  <NavLinks link={link} text={text} />
+                  <a href={link} onClick={() => setIsOpen(false)}>
+                    {text}
+                  </a>
                 </li>
               ))}
               <div className="flex items-center space-x-2">
