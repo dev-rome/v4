@@ -7,7 +7,7 @@ export default function Home() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-4 items-center gap-12 px-4 md:grid-cols-8 lg:grid-cols-12">
           <div className="col-span-4 md:col-span-8">
-            <h2 className="text-lg font-bold">Hi, my name is</h2>
+            <h2 className="text-xl font-bold">Hi, my name is</h2>
             <h1 className="mt-2 text-6xl font-bold">Jerome Haynes</h1>
             <h3 className="mt-2 text-2xl font-semibold">A Software Engineer</h3>
             <p className="mt-4 text-lg">
