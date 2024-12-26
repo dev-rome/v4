@@ -1,12 +1,16 @@
 import React from "react";
 
-interface AboutFeatureProps {
+interface CorePrincipleProps {
   number: string;
   title: string;
   description: string;
 }
 
-const AboutFeature: React.FC<AboutFeatureProps> = ({ number, title, description }) => (
+const CorePrinciple: React.FC<CorePrincipleProps> = ({
+  number,
+  title,
+  description,
+}) => (
   <div className="flex flex-col gap-3">
     <span className="text-5xl text-light dark:text-dark">{number}</span>
     <h3 className="text-3xl text-light dark:text-dark">{title}</h3>
@@ -45,7 +49,7 @@ export default function About() {
 
             <div className="mt-8 rounded-lg bg-dark p-8 dark:bg-light">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <AboutFeature
+                <CorePrinciple
                   number="01"
                   title="Make It"
                   description="I focus on bringing designs to life directly in the browser,
@@ -55,7 +59,7 @@ export default function About() {
                     ideas into tangible, functional links that showcase the
                     potential of a project in real-time."
                 />
-                <AboutFeature
+                <CorePrinciple
                   number="02"
                   title="Collaborate"
                   description="Collaboration is at the heart of every successful project. I
@@ -66,7 +70,7 @@ export default function About() {
                     quicker iterations, and results that truly resonate with
                     everyone involved."
                 />
-                <AboutFeature
+                <CorePrinciple
                   number="03"
                   title="Accessible"
                   description="I prioritize building inclusive and user-friendly
@@ -75,7 +79,7 @@ export default function About() {
                     ensure solutions are meaningful, equitable, and easy to use
                     for everyone."
                 />
-                <AboutFeature
+                <CorePrinciple
                   number="04"
                   title="Keep learning"
                   description="I believe continuous learning is key to staying ahead in a
