@@ -6,10 +6,12 @@ interface NavLinkProps {
   text: string;
 }
 
-export default function NavLinks({ link, text }: NavLinkProps) {
+const NavLinks: React.FC<NavLinkProps> = ({ link, text }) => {
   return (
     <Link to={link} className="text-lg hover:text-cyan-600">
       {text}
     </Link>
   );
-}
+};
+
+export default NavLinks;
