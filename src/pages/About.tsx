@@ -1,22 +1,6 @@
 import React from "react";
-
-interface CorePrincipleProps {
-  number: string;
-  title: string;
-  description: string;
-}
-
-const CorePrinciple: React.FC<CorePrincipleProps> = ({
-  number,
-  title,
-  description,
-}) => (
-  <div className="flex flex-col gap-3">
-    <span className="text-5xl text-light dark:text-dark">{number}</span>
-    <h3 className="text-3xl text-light dark:text-dark">{title}</h3>
-    <p className="text-light dark:text-dark">{description}</p>
-  </div>
-);
+import CorePrinciple from "../components/CorePrinciple";
+import corePrinciplesData from "../data/corePrinciplesData";
 
 export default function About() {
   return (
@@ -49,46 +33,14 @@ export default function About() {
 
             <div className="mt-8 rounded-lg bg-dark p-8 dark:bg-light">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <CorePrinciple
-                  number="01"
-                  title="Make It"
-                  description="I focus on bringing designs to life directly in the browser,
-                    creating interactive and responsive experiences that teams
-                    and clients can rally around. While design tools provide a
-                    great starting point, the true value lies in transforming
-                    ideas into tangible, functional links that showcase the
-                    potential of a project in real-time."
-                />
-                <CorePrinciple
-                  number="02"
-                  title="Collaborate"
-                  description="Collaboration is at the heart of every successful project. I
-                    work closely with teams and clients to bring ideas to life,
-                    ensuring clear communication and alignment throughout the
-                    process. I focus on creating functional solutions that align
-                    with a shared vision. This approach fosters better feedback,
-                    quicker iterations, and results that truly resonate with
-                    everyone involved."
-                />
-                <CorePrinciple
-                  number="03"
-                  title="Accessible"
-                  description="I prioritize building inclusive and user-friendly
-                    experiences that cater to people of all abilities. By
-                    following accessibility standards and best practices, I
-                    ensure solutions are meaningful, equitable, and easy to use
-                    for everyone."
-                />
-                <CorePrinciple
-                  number="04"
-                  title="Keep learning"
-                  description="I believe continuous learning is key to staying ahead in a
-                    constantly evolving industry. Whether it's exploring new
-                    technologies, refining existing skills, or adopting
-                    innovative practices, I stay curious and committed to
-                    growth. This dedication ensures I can consistently deliver
-                    the best solutions and adapt to new challenges effectively."
-                />
+                {corePrinciplesData.map(({ number, title, description }) => (
+                  <CorePrinciple
+                    key={number}
+                    number={number}
+                    title={title}
+                    description={description}
+                  />
+                ))}
               </div>
             </div>
           </div>
