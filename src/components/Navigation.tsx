@@ -42,13 +42,11 @@ export default function Navigation() {
       >
         <p className="font-heading">DR</p>
       </a>
-      <div className="hidden md:flex gap-4">
+      <div className="hidden gap-4 md:flex">
         <ul className="flex space-x-4">
           {links.map(({ link, text }) => (
             <li key={text}>
-              <a href={link}>
-                {text}
-              </a>
+              <a href={link}>{text}</a>
             </li>
           ))}
         </ul>
@@ -69,13 +67,10 @@ export default function Navigation() {
           <span className="text-xs">Dark</span>
         </div>
       </div>
-      <div className="md:hidden flex items-center">
-        <button
-          onClick={toggleMenu}
-          className="focus:outline-none"
-        >
+      <div className="flex items-center md:hidden">
+        <button onClick={toggleMenu} className="focus:outline-none">
           <svg
-            className="w-6 h-6"
+            className="h-6 w-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

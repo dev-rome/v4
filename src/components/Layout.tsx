@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="text-light-text dark:text-dark-text flex min-h-screen flex-col bg-light dark:bg-dark">
+    <div className="flex min-h-screen flex-col bg-light text-light-text dark:bg-dark dark:text-dark-text">
       <Navigation />
       <main>{children}</main>
     </div>
