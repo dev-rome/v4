@@ -65,29 +65,11 @@ const projectData = [
   },
   {
     id: "7",
-    title: "Weather App",
-    description:
-      "A Next.js app using the Weatherbit API to provide quick and accurate weather information.",
-    image: WeatherApp,
-    url: "https://example.com",
-    githubLink: "https://github.com/dev-rome/Weather-App",
-  },
-  {
-    id: "8",
-    title: "IP Address Tracker",
-    description:
-      "A web app that tracks the location of an IP address using the IP Geolocation API.",
-    image: IPAddressTracker,
-    url: "https://example.com",
-    githubLink: "https://github.com/dev-rome/IP-Address-Tracker",
-  },
-  {
-    id: "9",
     title: "Clock App",
     description:
       "A simple clock application built with React and Tailwind CSS.",
     image: ClockApp,
-    url: "https://example.com",
+    url: "https://chic-churros-64bbb2.netlify.app/",
     githubLink: "https://github.com/dev-rome/Clock-App",
   },
 ];
