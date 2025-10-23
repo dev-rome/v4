@@ -12,7 +12,7 @@ export default function Contact() {
           projects on GitHub:
         </p>
         <div className="mt-8 flex space-x-6">
-          <a href="mailto:info.devrome@gmail.con">
+          <a href="mailto:info.devrome@gmail.com">
             <FaEnvelope className="text-3xl" />
           </a>
           <a
