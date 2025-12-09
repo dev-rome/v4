@@ -4,7 +4,6 @@ import TimberAndHatchet from "../assets/timber-and-hatchet.png";
 import WordGame from "../assets/word-game.png";
 import ToastMessage from "../assets/toast-message.png";
 import DictionaryApp from "../assets/dictionary-app.png";
-import ClockApp from "../assets/clock-app.png";
 
 const projectData = [
   {
@@ -60,15 +59,6 @@ const projectData = [
     image: DictionaryApp,
     url: "https://inquisitive-biscochitos-13dfd2.netlify.app/",
     githubLink: "https://github.com/dev-rome/Dictionary-Web-App",
-  },
-  {
-    id: "7",
-    title: "Clock App",
-    description:
-      "A simple clock application built with React and Tailwind CSS.",
-    image: ClockApp,
-    url: "https://chic-churros-64bbb2.netlify.app/",
-    githubLink: "https://github.com/dev-rome/Clock-App",
   },
 ];
 
